@@ -1,9 +1,9 @@
-import Header from '@/components/common/header'
 import { AdminLayout } from '@/components/layout'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 // import dynamic from 'next/dynamic'
 import { Box, Typography } from '@mui/material'
+import { Header } from '@/components/common'
 
 // const Header = dynamic(() => import('@/components/common/header'), { ssr: false })
 
@@ -17,8 +17,8 @@ export default function AboutPage(props: AboutPageProps) {
 	const page = router.query?.page
 
 	useEffect(() => {
-		if (!page) return
-		;(async () => {
+		if (!page) return;
+		(async () => {
 			const response = await fetch(`https://js-post-api.herokuapp.com/api/posts?_page=${page}`)
 			const data = await response.json()
 
