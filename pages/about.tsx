@@ -17,8 +17,8 @@ export default function AboutPage(props: AboutPageProps) {
 	const page = router.query?.page
 
 	useEffect(() => {
-		if (!page) return;
-		(async () => {
+		if (!page) return
+		;(async () => {
 			const response = await fetch(`https://js-post-api.herokuapp.com/api/posts?_page=${page}`)
 			const data = await response.json()
 
